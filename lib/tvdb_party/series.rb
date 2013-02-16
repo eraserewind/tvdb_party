@@ -15,7 +15,7 @@ module TvdbParty
       @air_day = options['Airs_DayOfWeek']
       @status = options['Status']
       @imdb_id = options["IMDB_ID"]
-      @last_updated = options['lastupdated']
+      @last_updated = Time.at(options['lastupdated'].to_i)
 
       if options["Genre"]
         @genres = options["Genre"][1..-1].split("|")
